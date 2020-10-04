@@ -1,0 +1,37 @@
+<div class="division-wrapper">
+  <div class="division-header">{{ division.getName() }}</div>
+  <div class="table-wrapper">
+    <table>
+      <tr>
+        <td>Teams</td>
+        {% for team2 in teams %}
+          <td class="table-header">{{ team2.getName() }}</td>
+        {% endfor %}
+        <td class="table-header">Score</td>
+      </tr>
+      {% for team1 in teams %}
+        <tr>
+          <td class="table-header">{{ team1.getName() }}</td>
+          {% for team2 in teams %}
+            {% if team1.getId() == team2.getId() %}
+              <td class="locked"></td>
+            {% else %}
+              <td>
+                {% if grouped_results[division.getId()][team1.getId()][team2.getId()] is defined %}
+                  {{ grouped_results[division.getId()][team1.getId()][team2.getId()].getScore1() }}:{{ grouped_results[division.getId()][team1.getId()][team2.getId()].getScore2() }}
+                {% elseif grouped_results[division.getId()][team2.getId()][team1.getId()] is defined %}
+                  {{ grouped_results[division.getId()][team2.getId()][team1.getId()].getScore2() }}:{{ grouped_results[division.getId()][team2.getId()][team1.getId()].getScore1() }}
+                {% endif %}
+              </td>
+            {% endif %}
+          {% endfor %}
+          <td>
+            {% if team_scores[team1.getId()] is defined %}
+              {{ team_scores[team1.getId()] }}
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>

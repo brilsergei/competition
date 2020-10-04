@@ -1,0 +1,8 @@
+.menu-wrapper {
+  margin-bottom: 40px;
+}
+
+.generator-menu, .results-menu {
+  display: inline-block;
+  width: 20%;
+}

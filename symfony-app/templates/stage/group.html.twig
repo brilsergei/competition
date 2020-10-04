@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="/css/group.css">
+  <link rel="stylesheet" href="/css/menu.css">
+{% endblock %}
+
+{% block title %}Group stage results{% endblock %}
+
+{% block body %}
+  {{ include('competition_menu.html.twig') }}
+  {% for division in divisions %}
+    {{ include('stage/division_table.html.twig', {'teams': grouped_teams[division.getId()]}) }}
+  {% endfor %}
+{% endblock %}

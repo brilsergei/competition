@@ -1,0 +1,20 @@
+<div class="menu-wrapper">
+  <div class="results-menu">
+    <span>Results</span>
+    <ul>
+      <li><a href="{{ path('group_stage') }}">Group results</a></li>
+      <li><a href="{{ path('quarterfinal_stage') }}">Quarterfinal results</a></li>
+      <li><a href="{{ path('semifinal_stage') }}">Semifinal results</a></li>
+      <li><a href="{{ path('final_stage') }}">Final results</a></li>
+    </ul>
+  </div>
+  <div class="generator-menu">
+    <span>Generator</span>
+    <ul>
+      <li><form action="{{ path('group_result_generate') }}"><input type="submit" value="Generate group results"></form></li>
+      <li><form action="{{ path('quarterfinal_result_generate') }}"><input type="submit" value="Generate quarterfinal results"></form></li>
+      <li><form action="{{ path('semifinal_result_generate') }}"><input type="submit" value="Generate semifinal results"></form></li>
+      <li><form action="{{ path('final_result_generate') }}"><input type="submit" value="Generate final results"></form></li>
+    </ul>
+  </div>
+</div>

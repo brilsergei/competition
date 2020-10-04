@@ -1,0 +1,21 @@
+.division-wrapper {
+  margin-bottom: 40px;
+}
+
+.division-header {
+  padding: 0 0 10px 100px;
+  font-size: 22px;
+}
+
+td {
+  border: solid #000 1px;
+  padding: 3px 10px;
+}
+
+td.table-header {
+  font-weight: bold;
+}
+
+td.locked {
+  background-color: gray;
+}
